@@ -2,102 +2,68 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Новогодний кроссворд</title>
+  <title>Новогодний кроссворд</ Assistant>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f0f8ff;
+      background: #0f4c3a;
+      color: white;
       text-align: center;
       padding: 20px;
     }
-    h1 {
-      color: #d42426;
-    }
-    table {
+    .crossword {
+      display: grid;
+      grid-template-columns: repeat(10, 40px);
+      gap: 2px;
       margin: 20px auto;
-      border-collapse: collapse;
+      max-width: 400px;
     }
-    td {
-      width: 30px;
-      height: 30px;
-      border: 1px solid #000;
-      text-align: center;
+    .cell {
+      width: 40px;
+      height: 40px;
+      background: #2c7a5d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-weight: bold;
-      background-color: #fff;
+      font-size: 18px;
+      border: 1px solid #1a5c45;
     }
     .black {
-      background-color: #000;
+      background: #000;
     }
-    .clues {
-      max-width: 600px;
-      margin: 20px auto;
+    .hint {
+      margin-top: 20px;
       text-align: left;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    .clues h2 {
-      color: #2e8b57;
-    }
-    .clue {
-      margin: 8px 0;
+    .hint h3 {
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <h1>🎄 Новогодний кроссворд 🎄</h1>
+  <h1>🎄 Новогодний кроссворд</h1>
 
-  <!-- Таблица кроссворда (10x10) -->
-  <table>
-    <tr>
-      <td class="black"></td><td>Ё</td><td>Л</td><td>К</td><td>А</td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td>
-    </tr>
-    <tr>
-      <td>С</td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td>Д</td><td>Е</td><td>Д</td><td>М</td><td>О</td>
-    </tr>
-    <tr>
-      <td>Н</td><td class="black"></td><td>С</td><td>Н</td><td>Е</td><td>Г</td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td>
-    </tr>
-    <tr>
-      <td>Е</td><td class="black"></td><td>А</td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td>
-    </tr>
-    <tr>
-      <td>Г</td><td class="black"></td><td>Н</td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td>
-    </tr>
-    <tr>
-      <td>И</td><td class="black"></td><td>О</td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td>
-    </tr>
-    <tr>
-      <td>Л</td><td>А</td><td>С</td><td>К</td><td>А</td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td>
-    </tr>
-    <tr>
-      <td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td>Х</td><td>О</td><td>М</td><td>У</td><td>Т</td>
-    </tr>
-    <tr>
-      <td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td>О</td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td>
-    </tr>
-    <tr>
-      <td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td>Л</td><td>Е</td><td>Д</td><td class="black"></td><td class="black"></td>
-    </tr>
-  </table>
-
-  <div class="clues">
-    <h2>Вопросы:</h2>
-    <div class="clue"><strong>По горизонтали:</strong></div>
-    <div class="clue">1. Праздничное украшение на ёлке (4 буквы)</div>
-    <div class="clue">2. Главный новогодний персонаж у славян (5 букв)</div>
-    <div class="clue">3. Снежная буря (4 буквы)</div>
-    <div class="clue">4. Место, где живёт Дед Мороз (5 букв)</div>
-    <div class="clue">5. Замерзшая вода (3 буквы)</div>
-
-    <div class="clue"><strong>По вертикали:</strong></div>
-    <div class="clue">6. Новогоднее дерево (4 буквы)</div>
-    <div class="clue">7. Персонаж в красной шубе с мешком подарков (7 букв)</div>
-    <div class="clue">8. Небесное явление зимой (4 буквы)</div>
-    <div class="clue">9. Символ Нового года с рогами (5 букв)</div>
-    <div class="clue">10. Олень, символ зимы и праздника (4 буквы)</div>
+  <div class="crossword" id="cw">
+    <!-- Пример заполненной сетки: -->
+    <!-- Слово "ЁЛКА" по горизонтали (ряд 0) -->
+    <div class="cell">Ё</div><div class="cell">Л</div><div class="cell">К</div><div class="cell">А</div><div class="black"></div><div class="cell">Д</div><div class="cell">Р</div><div class="cell">А</div><div class="cell">К</div><div class="cell">О</div>
+    <!-- Слово "ДЕД" + "СНЕГ" по вертикали -->
+    <div class="cell">Д</div><div class="black"></div><div class="black"></div><div class="black"></div><div class="cell">С</div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="cell">Н</div>
+    <div class="cell">Е</div><div class="cell">М</div><div class="cell">О</div><div class="cell">Р</div><div class="cell">О</div><div class="cell">З</div><div class="black"></div><div class="black"></div><div class="black"></div><div class="cell">О</div>
+    <div class="cell">Д</div><div class="black"></div><div class="black"></div><div class="black"></div><div class="cell">Г</div><div class="black"></div><div class="cell">П</div><div class="cell">О</div><div class="cell">Д</div><div class="cell">Ч</div>
+    <div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="cell">Ь</div>
+    <div class="cell">Б</div><div class="cell">О</div><div class="cell">Й</div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="cell">Т</div>
+    <div class="cell">Ш</div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="cell">А</div>
+    <div class="cell">А</div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="cell">К</div>
+    <div class="cell">Р</div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="cell">А</div>
+    <div class="cell">Ы</div><div class="cell">С</div><div class="cell">О</div><div class="cell">С</div><div class="cell">У</div><div class="cell">Л</div><div class="cell">Ь</div><div class="cell">К</div><div class="cell">А</div><div class="black"></div>
   </div>
 
-  <div style="margin-top: 30px; font-size: 14px; color: #555;">
-    Подсказка: слова пересекаются в ключевых буквах. Удачи в разгадывании!
-  </div>
-</body>
-</html>
+  <div class="hint">
+    <h3>Слова в кроссворде:</h3>
+    <p>1. Ёлка &nbsp; 2. Дед &nbsp; 3. Мороз &nbsp; 4. Снег &nbsp; 5. Дракон<br>
+       6. Подарок &nbsp; 7. Ночь &nbsp;

@@ -2,107 +2,82 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Christmas Crossword</title>
+  <title>New Year Crossword</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-      color: #333;
+      font-family: Arial, sans-serif;
+      background: #0d3b2a;
+      color: white;
       text-align: center;
       padding: 20px;
     }
-    h1 {
-      color: white;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-      margin-bottom: 20px;
-    }
-    table {
+    .crossword {
+      display: grid;
+      grid-template-columns: repeat(10, 36px);
+      gap: 2px;
       margin: 20px auto;
-      border-collapse: collapse;
-      background-color: white;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+      max-width: 360px;
     }
-    td {
-      width: 40px;
-      height: 40px;
-      border: 2px solid #222;
-      text-align: center;
+    .cell {
+      width: 36px;
+      height: 36px;
+      background: #1e6b4a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-weight: bold;
-      font-size: 18px;
-      background-color: #f9f9f9;
+      font-size: 16px;
+      border: 1px solid #0f4c35;
+      text-transform: uppercase;
     }
     .black {
-      background-color: #2c3e50;
+      background: #000;
     }
-    .clues {
-      max-width: 600px;
-      margin: 25px auto;
-      background: rgba(255, 255, 255, 0.9);
-      padding: 15px;
-      border-radius: 10px;
+    .hints {
+      margin-top: 20px;
+      max-width: 360px;
+      margin-left: auto;
+      margin-right: auto;
       text-align: left;
     }
-    .clues h2 {
-      color: #c0392b;
-      margin-top: 0;
-    }
-    .clue {
-      margin: 8px 0;
-      font-size: 16px;
-    }
-    footer {
-      color: white;
-      margin-top: 20px;
-      font-size: 14px;
-      opacity: 0.9;
+    .hints h3 {
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <h1>🎄 Christmas Crossword Puzzle 🎄</h1>
+  <h1>🎄 New Year Crossword</h1>
 
-  <!-- Crossword grid (7x7) -->
-  <table>
-    <tr>
-      <td>S</td><td>N</td><td>O</td><td>W</td><td>M</td><td>A</td><td>N</td>
-    </tr>
-    <tr>
-      <td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td>A</td>
-    </tr>
-    <tr>
-      <td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td>N</td>
-    </tr>
-    <tr>
-      <td>C</td><td>H</td><td>R</td><td>I</td><td>S</td><td>T</td><td>M</td>
-    </tr>
-    <tr>
-      <td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td>A</td>
-    </tr>
-    <tr>
-      <td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td>S</td>
-    </tr>
-    <tr>
-      <td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td></td>
-    </tr>
-  </table>
-
-  <div class="clues">
-    <h2>Clues:</h2>
-    <div class="clue"><strong>Across:</strong></div>
-    <div class="clue">1. White winter weather (3 letters)</div>
-    <div class="clue">4. Another name for Santa Claus (7 letters)</div>
-
-    <div class="clue"><strong>Down:</strong></div>
-    <div class="clue">1. A joyful holiday in December (7 letters)</div>
-    <div class="clue">2. A mythical creature that pulls Santa’s sleigh (3 letters)</div>
-    <div class="clue">3. Shiny decoration for the Christmas tree (3 letters)</div>
+  <!-- Simplified crossword grid (10x10) -->
+  <div class="crossword">
+    <!-- Row 1 -->
+    <div class="cell">S</div><div class="cell">N</div><div class="cell">O</div><div class="cell">W</div><div class="black"></div><div class="cell">J</div><div class="cell">O</div><div class="cell">Y</div><div class="black"></div><div class="black"></div>
+    <!-- Row 2 -->
+    <div class="cell">T</div><div class="black"></div><div class="black"></div><div class="black"></div><div class="cell">R</div><div class="black"></div><div class="black"></div><div class="black"></div><div class="cell">C</div><div class="cell">A</div>
+    <!-- Row 3 -->
+    <div class="cell">R</div><div class="cell">E</div><div class="cell">I</div><div class="cell">N</div><div class="cell">D</div><div class="cell">E</div><div class="cell">E</div><div class="cell">R</div><div class="black"></div><div class="cell">R</div>
+    <!-- Row 4 -->
+    <div class="cell">E</div><div class="black"></div><div class="black"></div><div class="black"></div><div class="cell">E</div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="cell">O</div>
+    <!-- Row 5 -->
+    <div class="cell">E</div><div class="black"></div><div class="cell">G</div><div class="cell">I</div><div class="cell">F</div><div class="cell">T</div><div class="black"></div><div class="black"></div><div class="black"></div><div class="cell">L</div>
+    <!-- Row 6 -->
+    <div class="black"></div><div class="black"></div><div class="cell">B</div><div class="black"></div><div class="cell">L</div><div class="cell">L</div><div class="cell">S</div><div class="black"></div><div class="black"></div><div class="cell">B</div>
+    <!-- Row 7 -->
+    <div class="cell">F</div><div class="cell">R</div><div class="cell">O</div><div class="cell">S</div><div class="cell">T</div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="cell">E</div>
+    <!-- Row 8 -->
+    <div class="cell">N</div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="cell">L</div>
+    <!-- Row 9 -->
+    <div class="cell">O</div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div><div class="cell">L</div>
+    <!-- Row 10 -->
+    <div class="cell">E</div><div class="cell">L</div><div class="cell">S</div><div class="cell">T</div><div class="cell">A</div><div class="cell">R</div><div class="black"></div><div class="black"></div><div class="black"></div><div class="black"></div>
   </div>
 
-  <footer>
-    Words: SNOW, SANTA, CHRISTMAS, ELF, STAR
-  </footer>
+  <div class="hints">
+    <h3>Words in the crossword:</h3>
+    <p>
+      1. SNOW &nbsp; 2. TREE &nbsp; 3. GIFT &nbsp; 4. NOEL &nbsp; 5. BELLS<br>
+      6. FROST &nbsp; 7. REINDEER &nbsp; 8. CAROL &nbsp; 9. STAR &nbsp; 10. JOY
+    </p>
+  </div>
 </body>
 </html>
